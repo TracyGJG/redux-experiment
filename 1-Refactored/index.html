@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Redux Counter App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1 data-value="count"></h1>
+
+    <button data-action="decrement" class="decrement">-</button>
+    <button data-action="increment" class="increment">+</button>
+  </body>
+
+  <script src="actions.js"></script>
+  <script src="reducer.js"></script>
+  <script src="store.js"></script>
+  <script src="framework.js"></script>
+
+  <script>
+    const store = createStore(countReducer, { count: 0 });
+
+    wireUpDom(store);
+  </script>
+</html>
