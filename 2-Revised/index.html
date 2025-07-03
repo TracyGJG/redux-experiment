@@ -15,13 +15,15 @@
   </body>
 
   <script type="module">
-    import wireUpDom from "./framework.js";
+    import { createStore } from './store.js';
 
-    import { createStore } from "./store.js";
+    import countReducer from './reducer.js';
 
-    import countReducer from "./reducer.js";
+    import wireUpDom from './framework.js';
 
-    const store = createStore(countReducer, { count: 0 });
+    const initialState = { count: 0 };
+
+    const store = createStore(countReducer, initialState);
 
     wireUpDom(store);
   </script>

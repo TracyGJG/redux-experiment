@@ -14,14 +14,17 @@
     <button data-action="increment" class="increment">+</button>
   </body>
 
+  <script src="store.js"></script>
+  <script>
+    const initialState = { count: 0 };
+  </script>
   <script src="actions.js"></script>
   <script src="reducer.js"></script>
-  <script src="store.js"></script>
-  <script src="framework.js"></script>
-
   <script>
-    const store = createStore(countReducer, { count: 0 });
-
+    const store = createStore(countReducer, initialState);
+  </script>
+  <script src="framework.js"></script>
+  <script>
     wireUpDom(store);
   </script>
 </html>
